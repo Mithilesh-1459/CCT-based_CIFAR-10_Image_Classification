@@ -35,3 +35,82 @@ CCT-CIFAR10-Classification/
 ├── saved_models/            # Model checkpoints after training
 │
 ├── outputs/                 # Visualizations (confusion matrices, sample predictions)
+```
+
+## 🔥 Key Features and Highlights
+Compact Convolutional Transformer (CCT):
+- Combines convolutional layers for token generation and lightweight transformer encoders for context modeling, enabling powerful yet efficient feature learning.
+
+Label Smoothing Cross-Entropy Loss:
+- Introduced to mitigate model overconfidence and improve generalization during training.
+
+Data Augmentation with AutoAugment Policies:
+- Applies random combinations of color transformations, geometric shifts, and flips to enhance dataset variability.
+
+Dynamic Learning Rate Scheduling:
+- Utilizes cosine annealing strategy to adjust the learning rate during training, promoting better convergence.
+
+Training-Validation Split:
+- Implements an 80-20 split on the training set for model validation during training.
+
+GPU-Enabled Training:
+- Fully utilizes CUDA devices if available for faster computations.
+
+Evaluation Metrics and Visualization:
+- Generates a confusion matrix along with Precision, Recall, and F1-Score calculations after testing.
+
+Reproducible Architecture:
+- Modularized scripts to allow easy hyperparameter tuning, architecture changes, or dataset swapping.
+
+## 🧠 CCT Model Architecture Overview
+Tokenizer:
+Initial convolutional layers extract dense local feature representations (tokens) from the input images.
+
+Transformer Encoder Layers:
+Multiple transformer blocks process the tokenized embeddings with self-attention and feed-forward networks.
+
+Sequence Pooling (Optional):
+Rather than using a class token, adaptive sequence pooling is applied to aggregate the final representations.
+
+Final Classifier:
+A fully connected layer outputs logits corresponding to the 10 CIFAR-10 classes.
+
+📊 CIFAR-10 Dataset
+60,000 color images (32x32 pixels)
+
+10 object categories:
+
+Airplane
+
+Automobile
+
+Bird
+
+Cat
+
+Deer
+
+Dog
+
+Frog
+
+Horse
+
+Ship
+
+Truck
+
+50,000 images for training and 10,000 images for testing.
+
+🛠️ Technologies Used
+Python 3.8+
+
+PyTorch 1.10+
+
+Torchvision
+
+Matplotlib
+
+Seaborn
+
+NumPy
