@@ -38,79 +38,74 @@ CCT-CIFAR10-Classification/
 ```
 
 ## 🔥 Key Features and Highlights
-Compact Convolutional Transformer (CCT):
-- Combines convolutional layers for token generation and lightweight transformer encoders for context modeling, enabling powerful yet efficient feature learning.
 
-Label Smoothing Cross-Entropy Loss:
-- Introduced to mitigate model overconfidence and improve generalization during training.
+- **Compact Convolutional Transformer (CCT)**:  
+  Combines convolutional layers for token generation and lightweight transformer encoders for context modeling, enabling powerful yet efficient feature learning.
 
-Data Augmentation with AutoAugment Policies:
-- Applies random combinations of color transformations, geometric shifts, and flips to enhance dataset variability.
+- **Label Smoothing Cross-Entropy Loss**:  
+  Introduced to mitigate model overconfidence and improve generalization during training.
 
-Dynamic Learning Rate Scheduling:
-- Utilizes cosine annealing strategy to adjust the learning rate during training, promoting better convergence.
+- **Data Augmentation with AutoAugment Policies**:  
+  Applies random combinations of color transformations, geometric shifts, and flips to enhance dataset variability.
 
-Training-Validation Split:
-- Implements an 80-20 split on the training set for model validation during training.
+- **Dynamic Learning Rate Scheduling**:  
+  Utilizes cosine annealing strategy to adjust the learning rate during training, promoting better convergence.
 
-GPU-Enabled Training:
-- Fully utilizes CUDA devices if available for faster computations.
+- **Training-Validation Split**:  
+  Implements an 80-20 split on the training set for model validation during training.
 
-Evaluation Metrics and Visualization:
-- Generates a confusion matrix along with Precision, Recall, and F1-Score calculations after testing.
+- **GPU-Enabled Training**:  
+  Fully utilizes CUDA devices if available for faster computations.
 
-Reproducible Architecture:
-- Modularized scripts to allow easy hyperparameter tuning, architecture changes, or dataset swapping.
+- **Evaluation Metrics and Visualization**:  
+  Generates a confusion matrix along with Precision, Recall, and F1-Score calculations after testing.
+
+- **Reproducible Architecture**:  
+  Modularized scripts to allow easy hyperparameter tuning, architecture changes, or dataset swapping.
+
+---
 
 ## 🧠 CCT Model Architecture Overview
-Tokenizer:
-Initial convolutional layers extract dense local feature representations (tokens) from the input images.
 
-Transformer Encoder Layers:
-Multiple transformer blocks process the tokenized embeddings with self-attention and feed-forward networks.
+- **Tokenizer**:  
+  Initial convolutional layers extract dense local feature representations (tokens) from the input images.
 
-Sequence Pooling (Optional):
-Rather than using a class token, adaptive sequence pooling is applied to aggregate the final representations.
+- **Transformer Encoder Layers**:  
+  Multiple transformer blocks process the tokenized embeddings with self-attention and feed-forward networks.
 
-Final Classifier:
-A fully connected layer outputs logits corresponding to the 10 CIFAR-10 classes.
+- **Sequence Pooling (Optional)**:  
+  Rather than using a class token, adaptive sequence pooling is applied to aggregate the final representations.
 
-📊 CIFAR-10 Dataset
-60,000 color images (32x32 pixels)
+- **Final Classifier**:  
+  A fully connected layer outputs logits corresponding to the 10 CIFAR-10 classes.
 
-10 object categories:
+---
 
-Airplane
+## 📊 CIFAR-10 Dataset
 
-Automobile
+- **Total Images**: 60,000 color images (32x32 pixels each)
+- **10 Object Categories**:
+  - Airplane
+  - Automobile
+  - Bird
+  - Cat
+  - Deer
+  - Dog
+  - Frog
+  - Horse
+  - Ship
+  - Truck
+- **Dataset Split**:
+  - 50,000 images for training
+  - 10,000 images for testing
 
-Bird
+---
 
-Cat
+## 🛠️ Technologies Used
 
-Deer
-
-Dog
-
-Frog
-
-Horse
-
-Ship
-
-Truck
-
-50,000 images for training and 10,000 images for testing.
-
-🛠️ Technologies Used
-Python 3.8+
-
-PyTorch 1.10+
-
-Torchvision
-
-Matplotlib
-
-Seaborn
-
-NumPy
+- Python 3.8+
+- PyTorch 1.10+
+- Torchvision
+- Matplotlib
+- Seaborn
+- NumPy
